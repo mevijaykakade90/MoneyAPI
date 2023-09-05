@@ -7,7 +7,7 @@ Endpoints
 1. Create User
 Handles the creation of new users in the system.
 
-HTTP Method: POST
+HTTP Method: GET
 Endpoint: /user/createUser/{name}
 Parameters:
     * name (String): The name of the user to be created.
@@ -16,7 +16,7 @@ Response: Returns a response indicating the result of user creation.
 2. Update User
 Updates user data based on provided parameters.
 
-HTTP Method: POST
+HTTP Method: GET
 Endpoint: /user/updateUser/{userId}/{amount}
 Parameters:
     * userId (Integer): The unique identifier of the user to update.
@@ -26,7 +26,7 @@ Response: Returns a response indicating the success or result of the user update
 3. Remove User
 Removes a user from the system based on their user ID.
 
-HTTP Method: POST
+HTTP Method: GET
 Endpoint: /user/removeUser/{userId}
 Parameters:
     * userId (Integer): The unique identifier of the user to be removed.
@@ -65,7 +65,7 @@ Endpoints
 1. Transfer Money
 Transfers a specified amount of money from one account to another.
 
-HTTP Method: POST
+HTTP Method: GET
 Endpoint: /transaction/transferMoney/{senderId}/{receiverId}/{amount}
 Parameters:
     * senderId (Integer): The unique identifier of the sender's account.
@@ -98,7 +98,7 @@ Parameters:
 5. Get transferExternalAddress
 Transfers a specified amount of money from one account to external address.
 
-HTTP Method: POST
+HTTP Method: GET
 Endpoint: /transferExternalAddress/{senderId}/{address}/{amount}
 Parameters:
     * senderId (Integer): The unique identifier of the sender's account.

@@ -11,7 +11,6 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -58,7 +57,7 @@ public class TransactionController {
 	 * @return A ResponseEntity containing a response message indicating the success
 	 *         or failure of the money transfer.
 	 */
-	@PostMapping("/transferMoney/{senderId}/{receiverId}/{amount}")
+	@GetMapping("/transferMoney/{senderId}/{receiverId}/{amount}")
 	public ResponseEntity<?> transferMoney(@PathVariable Integer senderId, @PathVariable String receiverId,
 			@PathVariable BigDecimal amount) {
 
@@ -164,7 +163,7 @@ public class TransactionController {
 	 *         withdrawal.
 	 */
 
-	@PostMapping("/transferExternalAddress/{senderId}/{address}/{amount}")
+	@GetMapping("/transferExternalAddress/{senderId}/{address}/{amount}")
 	public ResponseEntity<?> transferExternalAddress(@PathVariable Integer senderId,
 			@PathVariable WithdrawalService.Address address, @PathVariable BigDecimal amount) {
 
