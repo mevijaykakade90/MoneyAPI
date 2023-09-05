@@ -10,6 +10,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -45,7 +46,7 @@ public class UserController {
 	 * @return A ResponseEntity containing the created user if successful, or an
 	 *         error message with an HTTP status code indicating the failure.
 	 */
-	@GetMapping("/createUser/{name}")
+	@PostMapping("/createUser/{name}")
 	public ResponseEntity<?> createUser(@PathVariable String name) {
 
 		try {
@@ -77,7 +78,7 @@ public class UserController {
 	 *         response.
 	 * 
 	 */
-	@GetMapping("/updateUser/{userId}/{amount}")
+	@PostMapping("/updateUser/{userId}/{amount}")
 	public ResponseEntity<?> updateUser(@PathVariable Integer userId, @PathVariable BigDecimal amount) {
 		// Use a lock to ensure sequential processing of requests
 
@@ -106,7 +107,7 @@ public class UserController {
 	 *         removal. If successful, returns the removed user's details. If an
 	 *         error occurs, returns an internal server error with an error message.
 	 */
-	@GetMapping("/removeUser/{userId}")
+	@PostMapping("/removeUser/{userId}")
 	public ResponseEntity<?> removeUser(@PathVariable Integer userId) {
 
 		try {
